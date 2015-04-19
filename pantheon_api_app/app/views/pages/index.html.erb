@@ -1,0 +1,38 @@
+<div ng-app="app">
+		{{ 1 + 1 }}
+	<div ng-controller="deitiesCtrl" ng-init="fetchData()">
+
+		<label>Filter by name</label>
+		<input ng-model="nameFilter" list="names">
+
+			<datalist id="names">
+			<option ng-repeat="deity in deities">{{ deity.name }}</option>
+			</datalist>
+
+		<label>Filter by place</label>
+		<input ng-model="placeFilter" list="places">
+
+			<datalist id="places">
+			<option ng-repeat="deity in deities">{{ deity.place }}</option>
+			</datalist>
+
+		<button ng-click="changeOrder('name')">order by name</button>
+		<button ng-click="changeOrder('place')">order by places</button>
+
+		<div ng-repeat="deity in deities | filter: {name: nameFilter, place: placeFilter} | orderBy:orderByAttribute:descending">{{ deity.name }} - {{ deity.place }}</div>
+
+
+
+		<div id="form">
+				<div id="errors">
+				<p ng-repeat="error in errors">{{ error.statusText }}</p>
+				</div>
+			Name: <input ng-model="newName">
+			Places: <input ng-model="newPlaces">
+			Animals: <input ng-model="newAnimals">
+			Aegis: <input ng-model="newAegis">
+			<button ng-click="addNewDeity(newName, newPlaces, newAnimals, newAegis)">Add new deity</button>
+		</div>
+
+	</div>
+</div>

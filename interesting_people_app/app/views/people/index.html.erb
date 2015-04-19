@@ -1,0 +1,16 @@
+<div ng-app="app">
+  {{ 1 + 1 }}
+
+<h1>I N T E R E S T I N G P E O P L E</h1>
+
+  <div ng-controller="peopleCtrl">
+
+      <div ng-repeat="person in people">
+     	 <h3 ng-click="revealDetails()">{{ person.name }}</h3>
+     	 <p ng-hide="hideAndSeek">{{ person.details }}</p>
+      </div>
+
+
+
+  </div>
+ </div>

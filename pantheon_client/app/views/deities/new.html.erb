@@ -1,0 +1,17 @@
+<h1>Enter Deity Information</h1>
+
+<%= form_tag "/deities" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+
+  <%= label_tag :animals %>
+  <%= text_field_tag :animals %>
+
+  <%= label_tag :places %>
+  <%= text_field_tag :places %>
+
+   <%= label_tag :aegis %>
+  <%= text_field_tag :aegis %>
+
+  <%= submit_tag "Finish"%>
+<% end %>

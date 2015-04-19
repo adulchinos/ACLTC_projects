@@ -1,0 +1,16 @@
+<h1>Guess a number between 1 and 100!</h1>
+
+
+ <h2><%= cookies[:correct_number] %></h2>
+
+
+	<%= form_tag 'submit-number' do %>
+
+	<%= label_tag :message %>
+	
+	<%= text_field_tag :message %>
+
+	<%= submit_tag "submit number" %>
+
+	<% end %>
+

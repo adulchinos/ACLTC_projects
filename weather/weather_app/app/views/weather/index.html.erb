@@ -1,0 +1,23 @@
+<h1>W E A T H E R _ A P P</h1>
+
+
+
+<h4>Current ~ Condition</h4>
+<p><%= @weather.condition.temp %> degrees C</p>
+<p><%= @weather.condition.text %></p>
+<p>Sunrise is at: <%= @weather.astronomy.sunrise %></p>
+<p>Sunset is at: <%= @weather.astronomy.sunset %></p>
+
+
+<h4>f o r e c a s t :</h4>
+
+<% @weather.forecasts.each do |day| %>
+<ul>
+	<li><%= day.day %></li>
+	<li><%= day.low %></li>
+	<li><%= day.high %></li>
+	<li><%= day.text %></li>
+</ul>
+<% end %>
+
+<a href="<%= @weather.request_url %>">Full Forecast At Yahoo Weather</a>

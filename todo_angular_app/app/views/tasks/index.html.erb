@@ -1,0 +1,47 @@
+<div ng-app="app">
+  {{ 1 + 1 }}
+ <div ng-controller="taskCtrl">
+  {{firstTask + " " + secondTask + " " + thirdTask}}
+			<div>
+			  <input ng-model="firstTask">
+			</div>
+
+					<div>
+					  <input ng-model="secondTask">
+					</div>
+
+							<div>
+							  <input ng-model="thirdTask">
+							</div>
+    				
+    				<input ng-model="tasks[2]">
+    				
+
+
+
+
+
+	<ul>
+      <li ng-click="strikeTasks(task)" ng-repeat="task in tasks" ng-class="{ strike: task.struck }">{{ task.taskName }}</li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<h4>add a task:</h4>
+<input ng-model="newTask">
+<button ng-click="addTask(newTask)">add</button>
+
+
+<h4>{{ count() }}</h4>
+
+
+  </div>
+</div>
